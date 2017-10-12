@@ -1,0 +1,2 @@
+alias sublist3r='python /PATH/Sublist3r/sublist3r.py -d '
+alias sublist3r-one=". <(cat domains | awk '{print \"sublist3r \"$1 \" -o \" $1 \".txt\"}')"
